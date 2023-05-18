@@ -1,0 +1,8 @@
+// Needed for registering content with the web server
+permission org.osgi.framework.ServicePermission "org.osgi.service.http.HttpService", "get";
+
+// Needed to publish a Web Application
+permission org.osgi.framework.ServicePermission "com.lexmark.prtapp.webapp.WebApp", "register";
+
+// Allows access to device information.
+permission org.osgi.framework.ServicePermission "com.lexmark.prtapp.newcharacteristics.DeviceCharacteristicsService", "get";
