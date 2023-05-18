@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Button Function Example</title>
+	<script>
+		function myFunction() {
+			alert("Hello World!");
+		}
+		
+		function sendMessage()
+		{
+			lxkwebapp.sendMessageToEsf('{\"msg":\"Hello\"}');
+		}
+		function exit()
+		{
+			lxkwebapp.exit();
+		}
+		lxkwebapp.onExit = function()
+		{
+			// Probably do some cleanup here?
+			// Tell eSF that you are done
+			lxkwebapp.onExitComplete();
+		}
+		lxkwebapp.onBackPressed = function()
+		{
+			alert("Back was pressed!");
+		}
+	</script>
+</head>
+<body>
+	<hr>
+		<a href="info">Printer Info</a>
+		<br>
+		<h3>This is a photo taken from a canoe in Presque Isle Bay, near Erie, Pennsylvania.</h3>
+		<img src="webappexample_icon.jpg">
+		<button onclick="myFunction()">Click me</button>
+		<button onclick="sendMessage()">Send eSF Message</button>
+		<button onclick="exit()">Exit</button>
+	<hr>
+</body>
+</html>
